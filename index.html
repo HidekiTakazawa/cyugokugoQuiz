@@ -1,0 +1,3120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .header {
+      /* width: 800px; */
+     margin: 0 auto;
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      z-index: 10;
+      background-color: lemonchiffon;
+      text-align: center;
+
+
+    }
+    h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    .dataContent {
+      /* width: 400px; */
+      margin: 0 auto;
+      padding-top: 180px;
+      padding-left: 100px;
+      display: block;
+      width: 100%;
+    }
+
+    .dataShow {
+      margin: 0 auto;
+      display: block;
+    }
+
+    .dataNone {
+      display: none;
+    }
+
+    .clkBtn {
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .divFlex {
+      /* width: 800px; */
+      display: flex;
+      margin: 0 auto;
+      justify-content: center;
+    }
+
+    .sheetSelect {
+      padding-top: 0px;
+    }
+
+    .speed {
+      padding-top: 0px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+
+    <h1>
+      そうだったんだ！中国　単語帳　単語クイズ    </h1>
+    <div>
+      <label for="tts-select">合成言語：</label><select id="tts-select"></select>
+    </div>
+    
+    <button type="button" onclick="nextGO()" id="btnNext">Next</button>
+    <div class="divFlex">
+      <div class="sheetSelect">
+
+        <label for="sheet-select">シート選択：</label><select id="sheet-select" name="sheetSelect"><option value="第1課単語">第1課単語</option><option value="第２課単語">第２課単語</option><option value="1年生用">1年生用</option></select>
+      </div>
+      <div class="speed">
+        <label for="speech-Speed">　　音声スピード:</label>
+
+        <select name="speechSpeed" id="speech-Speed">
+            <option value="1.0">1.0</option>
+            <option value="0.9">0.9</option>
+            <option value="0.8">0.8</option>
+            <option value="0.7">0.7</option>
+            <option value="0.6">0.6</option>
+            <option value="0.5">0.5</option>
+            <option value="1.1">1.1</option>
+            <option value="1.2">1.2</option>
+            <option value="1.3">1.3</option>
+            <option value="1.4">1.4</option>
+            <option value="1.5">1.5</option>
+            <option value="1.6">1.6</option>
+            <option value="1.7">1.7</option>
+            <option value="1.8">1.8</option>
+            <option value="1.9">1.9</option>
+            <option value="2.0">2.0</option>
+            
+        </select>
+      </div>
+
+    </div>
+
+  </div>
+
+    <div class="dataContent dataShow">
+    <table border="1">
+            
+
+
+      <tbody><tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          第一课        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+          連番        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          中国語の単語/ピンイン、日本語訳        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          1        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          不久前        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          bùjiǔqián　少し前まで        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+          2        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          购买        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          gòumǎi　買う        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+          3        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          电饭锅        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          diànfànguō　炊飯器        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+          4        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          套        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          tào　セット        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+          5        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          感慨        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          gǎnkǎi　心に深く感じる        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+          6        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          飞速        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          fēisù　急速        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+          7        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          会        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          huì　～だろう        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+          8        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          其实        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          qíshí　実は        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+          9        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          并（副词/连词）        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          bìng （ fùcí / liáncí ）　別に        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+          10        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          不是  而是 （复句用连词）        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          bùshì     érshì   （ fùjù yòng liáncí ）　~ではなく・・・だ        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+          11        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          亲友        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          qīnyǒu　親戚と友人        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+          12        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          即便  如此        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          jíbiàn     rúcǐ　それにしても        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+          13        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          劳民  伤财        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          láomín     shāngcái　人力と財力を浪費する        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+          14        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          不管  怎么说        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          bùguǎn     zěnme shuō　何と言っても        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+          15        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          仍然        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          réngrán　依然として        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+          16        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          根深  蒂固        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          gēnshēn     dìgù　根強い        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+          17        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          空  手        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          kōng     shǒu　手ぶら（動詞＋目的語）        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+          18        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          说  不  过去        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          shuō     bù     guòqu　筋道が立たない        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+          19        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          另外        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          lìngwài　その他、一方        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+          20        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          代购        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          dàigòu　代理で購入する        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+          21        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          推动        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          tuīdòng　推し進める、拍車をかける        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+          22        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          由于        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          yóuyú　～のため        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+          23        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          愿意        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          yuànyì　したいと思う、したがる        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+          24        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          奶粉        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          nǎifěn　粉ミルク        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+          25        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          纸  尿布        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          zhǐ     niàobù　紙おむつ        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+          26        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          婴儿        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          yīngér　赤ちゃん        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+          27        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          尤其        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          yóuqí　特に        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+          28        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          因此        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          yīncǐ　だから（=このため）        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+          29        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          并（连词）        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          bìng （ liáncí ）　その上、そして        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+          30        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          形成        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          xíngchéng　生成する、できあがる        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+          31        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          商业  模式        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          shāngyè     móshì　ビジネスモデル        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+          32        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          据        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          jù　~によると        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+          33        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          有些        </td>
+
+        
+      </tr>
+            
+
+
+      <tr style="display: none;">
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          yǒuxiē　少し、いささか        </td>
+
+        
+      </tr>
+          </tbody></table>
+  </div>
+    <div class="dataContent dataNone">
+    <table border="1">
+            
+
+
+      <tbody><tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          第二课        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          単語        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          1        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          各付各的        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          gèfù gè de 別々に支払う        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          2        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          或者        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          huòzhě あるいは        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          3        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          分摊        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          fēntān （費用を）分担する        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          4        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          许多        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          xǔduō たくさん        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          5        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          觉得        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          juéde ～と感じる、～と思う        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          6        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          显得        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          xiǎnde ～のように見える、～が目立つ        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          7        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          小气        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          xiǎoqì けち臭い        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          8        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          既然        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          jìrán ～である以上、～したからには、～なら        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          9        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          细        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          xì 細かい        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          10        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          聚餐        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          jùcān 会食する        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          11        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          由 （     ）来        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          yóu   （           ） lái ～よって…する（動作主を導く）        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          12        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          买单        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          mǎidān 勘定を払う        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          13        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          的话        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          dehuà ～ということなら        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          14        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          的确        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          díquè 確かに        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          15        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          特别        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          tèbié とりわけ、特に        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          16        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          请客        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          qǐngkè 奢る、ご馳走する        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          17        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          尽管如此        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          jìnguǎnrúcǐ それにもかかわらず、それなのに        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          18        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          分开        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          fēnkāi 分ける、別々にする        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          19        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          付账        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          fùzhàng 支払う、勘定を払う        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          20        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          认为        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          rènwéi ～と考える、～と思う        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          21        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          爱面子        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          àimiànzi 体裁にこだわる、メンツを重んじる        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          22        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          讲排场        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          jiǎngpáichǎng 見栄を張る、派手好だ        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          23        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          而        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          ér ところが、一方（逆接を表す）        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          24        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          凑钱        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          còuqián お金を集める、お金を出し合う        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          25        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          萧条        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          xiāotiáo 不景気だ、不況だ        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          26        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          清楚        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          qīngchu はっきりしている        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          27        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          当场        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          dāngchǎng その場で        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          28        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          伤害        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          shānghài 傷つける、害する        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          29        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          相反        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          xiāngfǎn 逆に、一方、それに対して        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          30        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          显示        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          xiǎnshì ひけらかす、浮かび出る        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          31        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          破费        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          pòfèi お金を使う、散財する        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          32        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          过意不去        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          guòyìbuqù すまなく思う、恐縮に思う        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          33        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          欠人情        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          qiàn rénqíng 借りを作る        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          34        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          至于        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          zhìyú ～に至っては、～はというと        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          35        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          视（   ）而定        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          shì （       ） érdìng ～によって決まる、～次第        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          36        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          轮流        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          lúnliú 順番に        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          37        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          总的来看        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          zǒngdeláikàn 総体的に見れば        </td>
+
+        
+      </tr>
+          </tbody></table>
+  </div>
+    <div class="dataContent dataNone">
+    <table border="1">
+            
+
+
+      <tbody><tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          第1课        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          単語        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          1        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          你        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          nǐあなた        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          2        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          是        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          shì～である        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          3        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          留学生        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          liúxuéshēng留学生        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          4        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          吗        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          ma～か        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          5        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          我        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          wǒ私        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          6        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          一年级        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          yīniánjí1年生        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          7        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          叫        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          jiào（名前を）～という        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          8        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          什么        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          shénme何、何の        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          9        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          名字        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          míngzì名前        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          10        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          姓        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          xìng姓は～である        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          11        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          田中        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          tiánzhōng田中（姓）        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          12        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          田中成美        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          tiánzhōng chéngměi田中成美（人名）        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          13        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          欢迎        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          huānyíng歓迎する        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          14        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          谢谢        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          xièxieありがとう        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          15        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          学        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          xué学ぶ        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          16        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          日语        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          rìyǔ日本語        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          17        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          教育        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          jiàoyù教育        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          18        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          中文        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          zhōngwén中国語        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          19        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          学生        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          xuésheng学生        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+          20        </td>
+                <td onclick="speakData(this)" class="clkBtn">
+          请多关照        </td>
+
+        
+      </tr>
+            
+
+
+      <tr>
+
+
+
+
+        <td>
+                  </td>
+                <td>
+          qǐngduōguānzhàoどうぞよろしくお願いします        </td>
+
+        
+      </tr>
+          </tbody></table>
+  </div>
+  
+
+  <script>
+    var indexNext;
+    iniCSSSet();
+    nextGO();
+    var tdOLD;
+    var voiceSelect = document.querySelector('#tts-select');
+    var voices = speechSynthesis.getVoices();
+    var osAndroid = false;
+    var ua = window.navigator.userAgent.toLocaleLowerCase();
+    
+    if (ua.indexOf("windows") !== -1) {
+          osAndroid = false;
+          console.log(ua);
+          console.log(ua.indexOf("windows"));
+        } else {
+          osAndroid = true;
+          console.log(ua);
+          console.log(ua.indexOf("android"));
+
+        }
+    
+    
+   
+    
+    
+    let select = document.querySelector('[name="sheetSelect"]');
+
+    select.onchange = event => { 
+      
+      var selIndex = select.selectedIndex;
+      console.log(select.selectedIndex);
+      var classElement = document.getElementsByClassName('dataContent');
+      for (let i = 0; i < classElement.length; i++) {
+        
+        if (selIndex === i) {
+
+            classElement[i].classList.add("dataShow");
+            classElement[i].classList.remove("dataNone");
+          } else {
+            classElement[i].classList.add("dataNone");
+            classElement[i].classList.remove("dataShow");
+          }
+      }
+      indexNext = 1;
+      nextGO();
+    }
+     
+    function nextGO() {
+      
+      indexNext++;
+     
+      var classElement = document.querySelector('.dataShow');
+      
+      var tr = classElement.getElementsByTagName('tr');
+       if (indexNext > tr.length) {
+        indexNext = 2;
+      }
+      var btnNext = document.getElementById('btnNext');
+     
+      var i;
+      for (i = 1; i < tr.length; i++) {
+        
+        if (i === indexNext) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none"
+        }
+      }
+      
+    }
+    
+    function selectClear() {
+      input = document.getElementById('myInput');
+      input.value = '';
+      var classElement = document.querySelector('.dataShow');
+      
+      var tr = classElement.getElementsByTagName('tr');
+      
+      var i;
+      for (i = 1; i < tr.length; i++) {
+        tr[i].style.display = "";
+        
+        
+      }
+
+    }
+
+    
+    function fetchVoices(cb) {
+      if (!voices || !voices.length) {
+        setTimeout(function () {
+          voices = speechSynthesis.getVoices();
+          fetchVoices(cb);
+        }, 0);
+      }
+      else {
+        cb(voices);
+      }
+    }
+
+    function drawButtons(voices) {
+      for (i = 0; i < voices.length; i++) {
+        if (!osAndroid) {
+
+          if (voices[i].lang != 'zh-CN') {
+            continue;
+          }
+          var option = document.createElement('option');
+          option.textContent = voices[i].name;
+          option.setAttribute('data-lang', voices[i].lang);
+          option.setAttribute('data-name', voices[i].name);
+          voiceSelect.appendChild(option);
+          console.log(option);
+        }
+
+      }
+
+    }
+
+    function speakData(param1, param2) {
+
+      if (param1 instanceof HTMLTableCellElement) {
+        const td = param1;
+        
+       if (tdOLD === undefined){
+          tdOLD = param1;
+        } else {
+          tdOLD.style.backgroundColor = null;
+          tdOLD = param1;
+        }
+        
+
+        
+        const synth = window.speechSynthesis;
+        const column = td.cellIndex;
+        const tr = td.parentNode;
+        const row = tr.sectionRowIndex;
+        
+        console.log("行row=" + row + " 列column=" + column);
+        console.log(td.textContent);
+        const utterence = new SpeechSynthesisUtterance();
+        
+        console.log(utterence);
+        
+        td.style.backgroundColor = 'cyan';  
+        if (osAndroid) {
+          speakAndroid(td.textContent);
+          
+        } else {
+          var selectedIndex = voiceSelect.selectedIndex < 0 ? 0 : voiceSelect.selectedIndex;
+          var selectedOption = voiceSelect.selectedOptions[0].getAttribute('data-name');
+          speak(selectedOption, td.textContent);
+
+          
+
+        }
+
+      }
+
+    }
+    function speak(voiceName, speakText) {
+      var uttr = new SpeechSynthesisUtterance(speakText);
+
+      
+      if (!voices || !voices.length) {
+        voices = speechSynthesis.getVoices();
+      }
+      voices.forEach(function (v, i) {
+        if (v.name == voiceName) uttr.voice = v;
+      });
+      uttr.rate = speakSpeedRate();  
+      speechSynthesis.cancel();
+      speechSynthesis.speak(uttr);
+    }
+    function speakAndroid(speakText) {
+      var uttr = new SpeechSynthesisUtterance(speakText);
+      uttr.lang = "zh-CN"
+      uttr.rate = speakSpeedRate();  
+      speechSynthesis.cancel();
+      speechSynthesis.speak(uttr);
+    }
+    
+    
+    function iniCSSSet() {
+      var classElement = document.getElementsByClassName('dataContent');
+      classElement[0].classList.add("dataShow");
+      indexNext = 1;
+      for (let i = 1; i < classElement.length; i++) {
+        classElement[i].classList.add("dataNone");
+      }
+
+    }
+    
+    function speakSpeedRate() {
+      
+      let select = document.querySelector('[name="speechSpeed"]');
+      
+      var rate = parseFloat(select.selectedOptions[0].value);
+      return rate;
+
+    }
+    
+    fetchVoices(drawButtons);
+
+
+  </script>
+
+
+</body>
+</html>
